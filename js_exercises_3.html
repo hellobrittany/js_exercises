@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		
+	function addTwoNumbers(numberOne, numberTwo){
+		return numberOne + numberTwo;
+	}
+
+	console.log(addTwoNumbers(4, 8));
+
+
+	function average(array) {
+		var sum = 0;
+
+		for (var i = 0; i < array.length; i++) {
+			var number = array[i];
+			sum += number;
+		}
+		
+		console.log(sum/array.length);
+	}
+
+	average([5, 23, 98, 234, 1, 0, 3, 177])
+
+
+	function Book(title, author){
+		this.title = title;
+		this.author = author;
+		this.printDetails = function(){
+		return this.title + " written by " + this.author;
+	};
+  }
+
+	var harryPotter = new Book("Harry Potter", "JK Rowling")
+	console.log(harryPotter.printDetails());
+		
+
+		
+
+
+	</script>
+</body>
+</html>
