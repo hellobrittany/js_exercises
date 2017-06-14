@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Example</title>
+  <style>
+  	.button{
+	  	background-color: #4CAF50; /* Green */
+	    border: none;
+	    color: white;
+	    padding: 15px 32px;
+	    text-align: center;
+	    text-decoration: none;
+	    display: inline-block;
+    	font-size: 16px;
+  	}
+
+  	#header{
+			color: black;
+
+  	}
+
+  </style>
+</head>
+<body>
+
+<style>
+	.fancy {
+		font-style: italic;
+		text-decoration: underline;
+	}
+</style>
+  <h1 id="header" onmouseclick="headerRed()">Alexander Hamilton</h1>
+  <p onmousedown="changeParagraph">Alexander Hamilton (January 11, 1755 or 1757 – July 12, 1804) was an American statesman and one of the Founding Fathers of the United States. He was an influential interpreter and promoter of the U.S. Constitution, as well as the founder of the nation's financial system, the Federalist Party, the United States Coast Guard, and The New York Post newspaper.</p>
+
+  <button class="button" onclick="headerRed()">Button</button>
+  <script>
+    function toggleDetails() {
+      var ptag = document.querySelector('p');
+      if (ptag.style["display"] === "none") {
+        ptag.style["display"] = "block";
+      } else {
+        ptag.style["display"] = "none";
+      }
+    }
+
+
+  </script>
+
+  <script>
+  	
+  	function headerRed() {
+  		var h1tag = document.getElementById('header');
+  		h1tag.style['color'] = "red";
+  		h1tag.style['padding-left'] = '100px';
+  		
+  	}
+  </script>
+
+	<p onmousedown="changeParagraph(this)">1p tag</p>
+	<p onmousedown="changeParagraph(this)">2p tag</p>
+	<p onmousedown="changeParagraph(this)">3p tag</p>
+	<p onmousedown="changeParagraph(this)">4p tag</p>
+
+	<button onclick="styleAllParagraphs()">Toggle Paragraph Style</button>
+
+  <script>
+  	function changeParagraph(ptag) {
+  		ptag.style.color = "red";
+  	}
+
+  	function styleAllParagraphs() {
+  		var ptags = document.querySelectorAll('p');
+  		for (var i = 0; i < ptags.length; i++) {
+  			var ptag = ptags[i];
+  			ptag.classList.toggle("fancy");
+  		}
+  	}
+
+  </script>
+</body>
+</html>
